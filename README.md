@@ -23,4 +23,4 @@ Step 5: Run it and install any necessary libraries<br>
 
 # Lastly
 The project content is totally original and solely for academic purposes.<br>
-Do not plagiarize, otherwise you have lost a great chance to learn.
+This project is a great experience and fun to work on, so do not plagiarize.
