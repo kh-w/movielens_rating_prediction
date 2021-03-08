@@ -13,7 +13,7 @@ R version 4.0.4
 # Machine used
 Macbook Air 13-inch Early 2015
 
-# To replicate the results
+# Replicate the results
 Step 1: Install R and RStudio<br><br>
 Step 2: Download R code file capstone_project_movielens.R<br><br>
 Step 3: Run it and install any necessary libraries<br><br>
