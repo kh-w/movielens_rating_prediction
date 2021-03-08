@@ -1,6 +1,24 @@
-# Overview
-In this project, a system is developed to predict users' rating on movies they have not watched before. The system is being trained by a dataset and it is obtained at <http://files.grouplens.org/datasets/movielens/ml-10m.zip>. The dataset consists of 6 columns: User ID, Movie ID, Movie Title, Genre, Rating, and Timestamp of the rating. 90% of this dataset (9,000,055 rows) is defined as the training dataset and is used for developing the system. The remaining 10% (999,999 rows) is defined as test dataset which is treated as new data for the final model. The prediction will be compared to the actual ratings in the test dataset and the root mean squared error (RMSE) will be reported. 
+# Why this?
+This is the first capstone project of the HarvardX course "Data Science: Capstone". This is a requirement to complete the course and receive the Professional Certificate in Data Science, issue by edX and HarvardX.
 
-The methodology is to mine appropriate and useful data structures from the training dataset, transform these structures into predictors of the model. The model is a linear regression with the best model selected by forward selection.
+# Source of dataset
+MovieLens 10M dataset:
+https://grouplens.org/datasets/movielens/10m/
+http://files.grouplens.org/datasets/movielens/ml-10m.zip
 
-The goal of this project is to recommend movies to the users, therefore the ultimate product is a list of recommendation with the most recommended movie being listed on the top of the list and followed by second recommended, and so on. 
+# R version
+R version 4.0.4
+
+# Machine used
+Macbook Air 13-inch Early 2015
+
+# To replicate the results
+Step 1: Install R and RStudio
+Step 2: Download R code file capstone_project_movielens.R
+Step 3: Run it and install any necessary libraries
+Step 4: Download R markdown file capstone_project_movielens_pdf.Rmd 
+(Note: R code should be run before producing the R markdown report)
+Step 5: Run it and install any necessary libraries
+
+# Lastly
+The project content is totally original and solely for academic purposes. Do not plagiarize, otherwise you have lost a great chance to learn.
