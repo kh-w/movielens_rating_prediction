@@ -2,9 +2,9 @@
 This is the first capstone project of the HarvardX course "Data Science: Capstone". This is a requirement to complete the course and receive the Professional Certificate in Data Science, issue by edX and HarvardX.
 
 # Source of dataset
-MovieLens 10M dataset:
-https://grouplens.org/datasets/movielens/10m/
-http://files.grouplens.org/datasets/movielens/ml-10m.zip
+MovieLens 10M dataset:<br>
+https://grouplens.org/datasets/movielens/10m/<br>
+http://files.grouplens.org/datasets/movielens/ml-10m.zip<br>
 
 # R version
 R version 4.0.4
