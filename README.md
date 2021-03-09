@@ -12,7 +12,7 @@ http://files.grouplens.org/datasets/movielens/ml-10m.zip<br>
 R version 4.0.4
 
 # Machine used
-Macbook Air 13-inch Early 2015
+Macbook Air (13-inch, Early 2015)
 
 # Replicate the results
 Step 1: Install R and RStudio<br><br>
