@@ -18,6 +18,7 @@ Macbook Air 13-inch Early 2015
 Step 1: Install R and RStudio<br><br>
 Step 2: Download R code file capstone_project_movielens.R<br><br>
 Step 3: Run it and install any necessary libraries<br><br>
+<i>(Note: Allow ~30 mins total runtime)</i><br><br>
 Step 4: Download R markdown file capstone_project_movielens_pdf.Rmd<br><br>
 <i>(Note: R code should be run before producing the R markdown report)</i><br><br>
 Step 5: Run it and install any necessary libraries
