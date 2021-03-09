@@ -15,13 +15,34 @@ R version 4.0.4
 Macbook Air (13-inch, Early 2015)
 
 # Replicate the results
-Step 1: Install R and RStudio<br><br>
-Step 2: Download R code file capstone_project_movielens.R<br><br>
-Step 3: Run it and install any necessary libraries<br><br>
-<i>(Note: Allow ~30 mins total runtime)</i><br><br>
-Step 4: Download R markdown file capstone_project_movielens_pdf.Rmd<br><br>
-<i>(Note: R code should be run before producing the R markdown report)</i><br><br>
-Step 5: Run it and install any necessary libraries
+<table>
+  <tr>
+    <td>Step 1:</td>
+    <td>Install R and RStudio</td>
+  </tr>
+  <tr>
+    <td>Step 2:</td>
+    <td>Download R code file capstone_project_movielens.R</td>
+  </tr>
+  <tr>
+    <td>Step 3:</td>
+    <td>Run it and install any necessary libraries</td>
+  </tr>
+  <tr>
+    <td colspan="2"><i>(Note: Allow ~30 mins total runtime)</i></td>
+  </tr>
+  <tr>
+    <td>Step 4:</td>
+    <td>Download R markdown file capstone_project_movielens_pdf.Rmd</td>
+  </tr>
+  <tr>
+    <td colspan="2"><i>(Note: R code should be run before producing the R markdown report)</td>
+  </tr>
+  <tr>
+    <td>Step 5:</td>
+    <td>Run it and install any necessary libraries</td>
+  </tr>
+</table>
 
 # Lastly
 The project content is totally original and solely for academic purposes.<br>
