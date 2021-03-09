@@ -1,0 +1,125 @@
+---
+title: "Movie Recommendation System"
+author: "KH W"
+date: "02/08/2021"
+output:
+  html_document:
+    df_print: paged
+geometry: left=20mm, right=20mm, top=20mm, bottom=20mm
+---
+
+```{r setup, include = FALSE, message = FALSE}
+
+if(!require(tidyverse)) install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+if(!require(caret)) install.packages("caret", repos = "http://cran.us.r-project.org")
+if(!require(data.table)) install.packages("data.table", repos = "http://cran.us.r-project.org")
+if(!require(dplyr)) install.packages("dplyr", repos = "http://cran.us.r-project.org")
+if(!require(lubridate)) install.packages("lubridate", repos = "http://cran.us.r-project.org")
+if(!require(stringr)) install.packages("stringr", repos = "http://cran.us.r-project.org")
+if(!require(tidyr)) install.packages("tidyr", repos = "http://cran.us.r-project.org")
+if(!require(ggplot2)) install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+
+library(tidyverse)
+library(caret)
+library(data.table)
+library(dplyr)
+library(lubridate)
+library(stringr)
+library(tidyr)
+library(ggplot2)
+
+memory.limit(size=15000)
+
+load("movielens_ws.RData")
+
+```
+
+# Overview
+In this project, a system is developed to predict users' rating on movies they have not watched before. The system is being trained by a dataset and it is obtained at <http://files.grouplens.org/datasets/movielens/ml-10m.zip>. The dataset consists of 6 columns: User ID, Movie ID, Movie Title, Genre, Rating, and Timestamp of the rating. 90% of this dataset (9,000,055 rows) is defined as the training dataset and is used for developing the system. The remaining 10% (999,999 rows) is defined as test dataset which is treated as new data for the final model. The prediction will be compared to the actual ratings in the test dataset and the root mean squared error (RMSE) will be reported. 
+
+The methodology is to mine appropriate and useful data structures from the training dataset, transform these structures into predictors of the model. The model is a linear regression with the best model selected by forward selection.
+
+The goal of this project is to recommend movies to the users, therefore the ultimate product is a list of recommendation with the most recommended movie being listed on the top of the list and followed by second recommended, and so on. 
+
+# Dataset exploration
+
+## Movie popularity
+The rating data suggested the more rating a movie has, the higher rating that movie has. This could also be explained by intuition that highly rated movies are popular and popular movies have good ratings. A plot would be useful to illustrate the pattern:
+```{r feature1_plot, fig.height = 2, fig.width = 4, include = TRUE, message = FALSE}
+plot_moviepop
+```
+
+## Frequent raters
+The data suggests frequent raters tend to rate lower than non-frequent raters. This could be explained because frequent raters watch more movies means they are more likely to experience low quality movies (i.e., rating less than or equal to 3) which are comparatively uncommon in the movie database (see the rating distribution below). A graph could show the relationship between users' rating frequency and their average ratings:
+```{r feature2_plot, fig.height = 2, fig.width = 4, include = TRUE, message = FALSE}
+plot_rating_hist
+plot_freqrater
+```
+
+## Movie released year
+Released year of movies could be informative to the model because most of the 95% confidence mean rating of each released year are narrow and not overlapping with each other. The plot shows the 95% confidence interval of each year sorting from the worst rated year to the best rated year:
+```{r feature7_plot, fig.height = 4, fig.width = 10, include = TRUE, message = FALSE}
+plot_movieyear
+```
+
+## Rating timestamp
+Similarly, the timestamp of the rating could be informative. The confidence intervals do not overlap with each other.
+```{r feature8to12_plotgrid, fig.height = 2, fig.width = 4, include = TRUE, message = FALSE}
+plot_rateyear
+plot_ratemonth
+plot_rateday
+plot_rateWday
+plot_ratehour
+```
+
+## Genres
+Genres of the movies, as expected, have impact to the predictive power of the model. By sorting out the most frequently rated genres and plot it against the average rating, one can see the confidence intervals do not overlap with each other and the average rating ranges from 2.8 to more than 4. 
+```{r feature13to14_plot, fig.height = 5, fig.width = 10, include = TRUE, message = FALSE}
+plot_genre
+```
+
+## Movie title length
+Surprisingly, the length of the movie title also suggest a rating pattern. Titles with 14 words has a mean rating of below 3.2, titles with 13 words has a mean rating of above 4. 
+```{r feature17_plot, fig.height = 2, fig.width = 4, include = TRUE, message = FALSE}
+plot_titlelen
+```
+
+All the sections above will be considered as predictors of the model.
+
+# Model performance
+
+The model is a linear regression. The best model is selected by forward selection. The forward selection process starts with 3 predictors (mean of each movie, mean of each user, movie popularity) in the model, then the process adds the most contributive predictor until the improvement is no longer significant. 
+
+The final model is:
+```{r finalmodel, include = TRUE}
+summary(lmfitbest)
+```
+
+The RMSE of the model on the training dataset is 0.87002 and the RMSE of the model on the validation dataset is 0.87755.
+```{r modelsummary, include = TRUE, message = FALSE}
+RMSE(edx$y_hat,edx$rating)
+RMSE(validation$y_hat,validation$rating)
+```
+
+# Conclusion
+```{r recommendation, include = FALSE, message = FALSE}
+recommendations <- validation %>% 
+  select(userId, movieId, title, y_hat) %>% 
+  group_by(userId) %>%
+  arrange(userId,desc(y_hat))
+```
+The system can recommend movies to any user starting from the highest estimated rating.
+For example, for user 31063, the list of movie recommendation sorting from most recommended to least recommended, is:
+```{r recommendation31063, include = TRUE, message = FALSE}
+recommendations %>% filter(userId==31063)
+```
+
+Using this system, users can watch movies they probably like without looking up by themselves. One of the limitations of this system is it rarely predicts extreme rating (i.e. 5 stars or 0.5 stars). By rounding the prediction to the nearest 0.5 (in \textcolor{red}{red}), and compare to the actual ratings, one can see the system rarely predicts 0.5 to 2 stars and 5 stars:
+```{r limitation, fig.height = 5, fig.width = 5, include = TRUE}
+plot(density(round(validation$y_hat*2,0)/2), 
+     main = "Distribution of the prediction", 
+     ylim = c(0,6), col = "red")
+lines(density(round(validation$rating*2,0)/2))
+```
+
+This means the prediction cannot identify user's clear preferences, such as favorite actors, favorite directors or movies in sequels (e.g. Star Wars, Matrix). This limitation can be eliminated if there are extra attributes of the movies.
