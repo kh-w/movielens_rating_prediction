@@ -1,7 +1,7 @@
 # Why this?
 This is the first capstone project of the HarvardX course "Data Science: Capstone".<br>
 This is a requirement to complete the course and receive the Professional Certificate in Data Science, issue by edX and HarvardX.<br>
-The final report is available <a href="">here</a>.
+PDF version of the final report is available <a href="">here</a>.
 
 # Source of dataset
 MovieLens 10M dataset:<br>
