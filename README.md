@@ -44,6 +44,6 @@ Macbook Air (13-inch, Early 2015)
   </tr>
 </table>
 
-# Lastly
+# Lastly...
 The project content is totally original and solely for academic purposes.<br>
 This project is a great experience and fun to work on, so do not plagiarize.
