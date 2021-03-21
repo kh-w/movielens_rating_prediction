@@ -1,5 +1,5 @@
 # Project report
-The PDF version of the final report is available at this <a href="https://drive.google.com/file/d/1Ot0fehDgJmGsgI7cjJ-O4jLypfUefu0W/view?usp=sharing">link</a>.
+The PDF version of the final report is available <a href="https://drive.google.com/file/d/1Ot0fehDgJmGsgI7cjJ-O4jLypfUefu0W/view?usp=sharing">here</a>.
 
 # Source of dataset
 MovieLens 10M dataset:<br>
