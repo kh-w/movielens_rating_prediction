@@ -1,4 +1,4 @@
-# Project report
+# Project
 - Predicted movie ratings based on users’ rating history
 - Big data handling (1 million data points)
 - Compared basic regression models in R caret as well as deep learning models in R keras
