@@ -2,7 +2,7 @@
 The PDF version of the final report is available <a href="https://drive.google.com/file/d/1Ot0fehDgJmGsgI7cjJ-O4jLypfUefu0W/view?usp=sharing">here</a>.
 
 # Potential model improvement
-Deep neural network:
+<a href="https://github.com/kh-w/movielens_rating_prediction/blob/main/deep_neural_network_regression.R">Deep neural network</a>
 1) Built a densely connected neural network
 2) Achieved a similar RMSE, i.e. 0.8771
 
