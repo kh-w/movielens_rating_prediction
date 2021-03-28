@@ -5,10 +5,13 @@
 - Discovered data structure to Improve model performance
 - The final report is available <a href="https://drive.google.com/file/d/1Ot0fehDgJmGsgI7cjJ-O4jLypfUefu0W/view?usp=sharing">here</a>
 
+(Model improvement)
+- Explored the capability of deep neural network on this particular regression problem
+
 # Potential model improvement
 <a href="https://github.com/kh-w/movielens_rating_prediction/blob/main/deep_neural_network_regression.R">Deep neural network</a>
 1) Built a densely connected neural network
-2) Achieved a similar RMSE, i.e. 0.8771
+2) Achieved a similar RMSE, i.e. 0.8771, compare to the linear regression RMSE 0.8775491.
 
 # Source of dataset
 MovieLens 10M dataset:<br>
