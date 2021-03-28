@@ -1,5 +1,9 @@
 # Project report
-The PDF version of the final report is available <a href="https://drive.google.com/file/d/1Ot0fehDgJmGsgI7cjJ-O4jLypfUefu0W/view?usp=sharing">here</a>.
+- Predicted movie ratings based on users’ rating history
+- Big data handling (1 million data points)
+- Compared basic regression models in R caret as well as deep learning models in R keras
+- Discovered data structure to Improve model performance
+- The final report is available <a href="https://drive.google.com/file/d/1Ot0fehDgJmGsgI7cjJ-O4jLypfUefu0W/view?usp=sharing">here</a>
 
 # Potential model improvement
 <a href="https://github.com/kh-w/movielens_rating_prediction/blob/main/deep_neural_network_regression.R">Deep neural network</a>
