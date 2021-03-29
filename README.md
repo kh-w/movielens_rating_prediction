@@ -3,7 +3,7 @@
 - Big data handling (1 million data points)
 - Compared basic regression models in R caret as well as deep learning models in R keras
 - Discovered data structure to Improve model performance
-- The final report is available <a href="https://drive.google.com/file/d/1Ot0fehDgJmGsgI7cjJ-O4jLypfUefu0W/view?usp=sharing">here</a>
+- The final report is available <a href="https://github.com/kh-w/movielens_rating_prediction/blob/main/capstone_project_movielens_report.pdf">here</a>
 
 (Model improvement)
 - Explored the capability of deep neural network on this particular regression problem
