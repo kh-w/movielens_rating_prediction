@@ -11,7 +11,7 @@
 # Potential model improvement
 <a href="https://github.com/kh-w/movielens_rating_prediction/blob/main/deep_neural_network_regression.R">Deep neural network</a>
 1) Built a densely connected neural network
-2) Achieved a similar RMSE, i.e. 0.8771, compare to the linear regression RMSE 0.8775491.
+2) The network computed a lot faster and achieved a similar RMSE, i.e. 0.8771, compare to the linear regression RMSE 0.8775491.
 
 # Source of dataset 
 MovieLens 10M dataset:<br>
